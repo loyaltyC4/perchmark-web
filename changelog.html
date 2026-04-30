@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Changelog — Perchmark</title>
+<meta name="description" content="What's shipped, what's improved, what's next. Perchmark changelog — updated roughly weekly." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--ink:#0E2438;--ink-90:rgba(14,36,56,.9);--ink-70:rgba(14,36,56,.7);--ink-50:rgba(14,36,56,.5);--ink-30:rgba(14,36,56,.3);--ink-12:rgba(14,36,56,.12);--ink-06:rgba(14,36,56,.06);--coral:#E76C4A;--cream:#F6F1E7;--salt:#FBFAF7;--sage:#5A8B7E;--rust:#B05544;--mist:#8B8B89;--ash:#E5E2DA;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--salt);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--coral);color:var(--salt)}
+
+  nav.top{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;transition:all .3s ease;border-bottom:1px solid transparent}
+  nav.top.scrolled{background:rgba(251,250,247,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ink-06)}
+  .logo{font-family:'Fraunces',serif;font-size:22px;font-weight:500;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+  .logo svg{width:18px;height:18px}
+  nav .links{display:flex;gap:32px;font-size:14px;color:var(--ink-70)}
+  nav .links a:hover{color:var(--ink)}
+  nav .cta{display:flex;gap:12px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:8px;font-size:14px;font-weight:500;transition:all .2s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--ink);color:var(--salt)}
+  .btn-primary:hover{background:var(--coral)}
+  .btn-ghost{color:var(--ink-70)}
+  .btn-ghost:hover{color:var(--ink)}
+  .btn-coral{background:var(--coral);color:var(--salt)}
+  .btn-coral:hover{background:var(--ink)}
+  @media(max-width:720px){nav .links{display:none}}
+
+  .ph-head{padding:160px 32px 60px;max-width:880px;margin:0 auto}
+  .ph-eyebrow{font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:24px}
+  .ph-title{font-family:'Fraunces',serif;font-size:clamp(48px,7vw,88px);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:24px}
+  .ph-lede{font-size:18px;color:var(--ink-70);max-width:680px;line-height:1.6}
+
+  .timeline{max-width:880px;margin:0 auto;padding:40px 32px 120px}
+  .release{display:grid;grid-template-columns:200px 1fr;gap:48px;padding:40px 0;border-top:1px solid var(--ink-12)}
+  .release:first-child{border-top:none}
+  .release-meta{font-family:'JetBrains Mono',monospace}
+  .release-version{font-size:13px;font-weight:600;color:var(--coral);margin-bottom:6px;letter-spacing:.04em}
+  .release-date{font-size:12px;color:var(--ink-50);letter-spacing:.04em}
+  .release-tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+  .rel-tag{font-size:10px;padding:3px 8px;border-radius:6px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;font-family:'Inter',sans-serif}
+  .rel-tag.ship{background:rgba(90,139,126,.18);color:var(--sage)}
+  .rel-tag.fix{background:rgba(231,108,74,.15);color:var(--coral)}
+  .rel-tag.improve{background:var(--ink-06);color:var(--ink-70)}
+  .rel-tag.api{background:rgba(14,36,56,.15);color:var(--ink)}
+  .release h2{font-family:'Fraunces',serif;font-size:30px;font-weight:500;letter-spacing:-.01em;line-height:1.2;margin-bottom:14px}
+  .release p.summary{font-size:16px;color:var(--ink-70);line-height:1.6;margin-bottom:20px}
+  .release ul{list-style:none;padding:0}
+  .release ul li{padding:9px 0;font-size:14px;line-height:1.55;display:flex;align-items:flex-start;gap:10px;color:var(--ink-90)}
+  .release ul li:before{content:'';width:5px;height:5px;border-radius:50%;background:var(--coral);margin-top:9px;flex-shrink:0}
+  .release ul li b{font-weight:600}
+  @media(max-width:720px){.release{grid-template-columns:1fr;gap:18px;padding:32px 0}}
+
+  footer{background:var(--ink);color:var(--salt);padding:80px 32px 36px}
+  .footer-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+  .footer-brand .logo{color:var(--salt);margin-bottom:14px}
+  .footer-brand p{font-size:14px;color:rgba(251,250,247,.6);max-width:380px;margin-bottom:16px;line-height:1.6}
+  .footer-brand .meta{font-size:11px;color:rgba(251,250,247,.4);font-family:'JetBrains Mono',monospace}
+  footer h4{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:rgba(251,250,247,.5);font-weight:500;margin-bottom:14px}
+  footer ul{list-style:none;margin:0}
+  footer ul li{padding:5px 0}
+  footer ul li a{font-size:13px;color:rgba(251,250,247,.7);transition:color .2s}
+  footer ul li a:hover{color:var(--coral)}
+  .footer-bottom{max-width:1240px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(251,250,247,.1);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(251,250,247,.4);font-family:'JetBrains Mono',monospace}
+  @media(max-width:1080px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+  @media(max-width:720px){.footer-grid{grid-template-columns:1fr}}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a href="index.html" class="logo">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 14C5 14 6 12 8 11C10 10 12 11 13 12C14.5 13.5 17 13 19 11C20.5 9.8 21 8 21 7" stroke="#0E2438" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="6" r="1.6" fill="#E76C4A"/><path d="M3 18H21" stroke="#0E2438" stroke-width="1.4" stroke-linecap="round" opacity=".4"/></svg>
+    perchmark
+  </a>
+  <ul class="links">
+    <li><a href="index.html#features">Features</a></li>
+    <li><a href="index.html#product">Product</a></li>
+    <li><a href="index.html#who">Who it's for</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+  </ul>
+  <div class="cta">
+    <a class="btn btn-ghost" href="#">Sign in</a>
+    <a class="btn btn-primary" href="#">Request a demo →</a>
+  </div>
+</nav>
+
+<header class="ph-head reveal">
+  <div class="ph-eyebrow">Changelog</div>
+  <h1 class="ph-title">What's shipped.</h1>
+  <p class="ph-lede">Updates roughly weekly. We ship calmly. We document everything. Subscribe via RSS or email — no marketing, just shipping notes.</p>
+</header>
+
+<div class="timeline">
+
+  <div class="release reveal">
+    <div class="release-meta"><div class="release-version">v 2.7</div><div class="release-date">29 Apr 2026</div><div class="release-tags"><span class="rel-tag ship">Ship</span><span class="rel-tag improve">Improve</span></div></div>
+    <div>
+      <h2>Neighbourhood IQ — block-level intelligence ships globally.</h2>
+      <p class="summary">The single biggest expansion since launch. Every property in our 87-city footprint now carries block-level walkability, amenity density, competition, and future-development signals. Available on Portfolio and Institutional.</p>
+      <ul>
+        <li><b>Walkability score</b> per property, computed from open street data + amenity density within 800m radius (groceries, cafés, transit, beaches, schools).</li>
+        <li><b>Future-development radar</b> — surface council planning applications within 800m of every watched listing. Flagged in advance of approval.</li>
+        <li><b>Competition density</b> heat map — a tile-grid view of STR concentration per neighbourhood, with the over-supply zones marked in Reef Rust.</li>
+        <li><b>Noise complaint history</b> — three-year council noise complaint count per address (where data is public). Useful for due diligence on potential acquisitions.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release reveal">
+    <div class="release-meta"><div class="release-version">v 2.6</div><div class="release-date">21 Apr 2026</div><div class="release-tags"><span class="rel-tag ship">Ship</span></div></div>
+    <div>
+      <h2>Disruption Radar — what's about to change near your listings.</h2>
+      <p class="summary">A new daily check that surfaces construction permits, council applications, and noise complaints within 800m of every watched listing. The intel your local guests will start mentioning in reviews three months from now.</p>
+      <ul>
+        <li>Construction permit pulls from council open-data feeds across NSW, VIC, QLD (AU); UK; California, Florida, Tennessee, Arizona (US); BC, Ontario (CA); Auckland, Queenstown (NZ).</li>
+        <li>Noise complaint trend lines — when complaints in your area spike, you see it before guests do.</li>
+        <li>Café / restaurant openings within 200m — these tend to lift weekend ADR by 6–11% within 90 days.</li>
+        <li>Configured as a <b>Slack digest</b> by default. Switch to email or webhook in your settings.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release reveal">
+    <div class="release-meta"><div class="release-version">v 2.5</div><div class="release-date">14 Apr 2026</div><div class="release-tags"><span class="rel-tag ship">Ship</span><span class="rel-tag api">API</span></div></div>
+    <div>
+      <h2>Webhook firehose — push our intel into your stack.</h2>
+      <p class="summary">Institutional customers can now route any agent output into Slack, Hostaway, Hostfully, Guesty, Lodgify, or any HTTP endpoint via signed webhooks. No more polling.</p>
+      <ul>
+        <li>Five new webhook events: <b>regulatory_alert</b>, <b>pricing_window_open</b>, <b>comp_set_drift</b>, <b>acquisition_match</b>, <b>portfolio_drift</b>.</li>
+        <li>HMAC-signed payloads so you can verify Perchmark sent them.</li>
+        <li>Configurable retry policy (1–10 retries, exponential backoff).</li>
+        <li>Replay log for the last 30 days — re-fire any event from the dashboard if your endpoint was down.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release reveal">
+    <div class="release-meta"><div class="release-version">v 2.4</div><div class="release-date">07 Apr 2026</div><div class="release-tags"><span class="rel-tag ship">Ship</span></div></div>
+    <div>
+      <h2>Pricing window alerts — when to push, when to hold.</h2>
+      <p class="summary">A new agent that watches your top 5 comps in each market and surfaces the moments when the pricing window opens on YOUR listings. Apply with one click.</p>
+      <ul>
+        <li>"Your Wategos place is sitting $45/night below the comp set" — with the comp set, the calendar window, and a one-click apply button.</li>
+        <li>Auto-applied (Portfolio+) on the schedule and lift you set per listing.</li>
+        <li>Walk-back protection: if the comp set retreats within 48 hours, your pricing retreats too. No leaving money on the table; no chasing a rate that never holds.</li>
+        <li>Exposure cap configurable per listing — never raise more than X% above the comp set median, even when the algorithm wants to.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release reveal">
+    <div class="release-meta"><div class="release-version">v 2.3</div><div class="release-date">31 Mar 2026</div><div class="release-tags"><span class="rel-tag ship">Ship</span></div></div>
+    <div>
+      <h2>Cornwall coverage shipped — UK FHL re-underwriting at scale.</h2>
+      <p class="summary">17,498 Cornwall listings, with FHL abolition modeling baked in. Drop a property URL — we'll show you what the new tax regime does to net cash flow under base, conservative, and stress scenarios.</p>
+      <ul>
+        <li>UK FHL abolition modeling: post-April-2025 income classification, council-tax premium, capital gains treatment, mortgage interest restriction.</li>
+        <li>Cornwall planning permission tracker — every parish council STR consultation surfaced as it opens.</li>
+        <li>Cornwall-specific comp set normalization (cottage / barn conversion / clifftop / coastal village categories).</li>
+        <li>£/$ toggling on all UK reports — useful for international buyers underwriting in their home currency.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release reveal">
+    <div class="release-meta"><div class="release-version">v 2.2</div><div class="release-date">17 Mar 2026</div><div class="release-tags"><span class="rel-tag ship">Ship</span></div></div>
+    <div>
+      <h2>Daily Brief — three things to know, every morning.</h2>
+      <p class="summary">A new agent that synthesizes your watched markets, your portfolio drift, and your regulatory exposure into three items. One email. One Slack post. Three things to do before lunch.</p>
+      <ul>
+        <li>Configurable delivery time per timezone — defaults to 7:00 local.</li>
+        <li>Slack-native formatting (block kit) so the brief renders properly in your channel of choice.</li>
+        <li>Mobile-optimized email template with inline charts (works on iOS Mail, Outlook, Gmail).</li>
+        <li>One-click "snooze for 7 days" if you're traveling or on leave — no more brief-bombing your inbox during holidays.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release reveal">
+    <div class="release-meta"><div class="release-version">v 2.1</div><div class="release-date">3 Mar 2026</div><div class="release-tags"><span class="rel-tag improve">Improve</span><span class="rel-tag fix">Fix</span></div></div>
+    <div>
+      <h2>Sub-hour competitor pricing alerts. Comp set tighter.</h2>
+      <p class="summary">We tightened the alert latency from 4 hours to under an hour for the top 5 comps in each watched market. Also fixed a long-standing bug where listings with mixed-amenity flags (e.g. "pool" vs "small plunge pool") were being clustered together inappropriately.</p>
+      <ul>
+        <li><b>Improved:</b> Competitor alert latency reduced from ~4h to &lt;1h on Operator and Portfolio. Real-time on Institutional.</li>
+        <li><b>Improved:</b> Comp set normalization now distinguishes hot tub vs pool vs plunge pool vs jacuzzi; ocean view vs ocean glimpse vs walk-to-beach.</li>
+        <li><b>Fixed:</b> Edge case where a listing with no review history and no calendar data was being assigned a default occupancy of 65%. Now shows "insufficient data" honestly.</li>
+        <li><b>Fixed:</b> Slack digest was sometimes posting twice if the underlying watched listing was edited within the digest compilation window.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release reveal">
+    <div class="release-meta"><div class="release-version">v 2.0</div><div class="release-date">10 Feb 2026</div><div class="release-tags"><span class="rel-tag ship">Ship</span></div></div>
+    <div>
+      <h2>Acquisition Scout — daily, pre-underwritten matches.</h2>
+      <p class="summary">Tell us what you want. We find it. Across REA, Domain, Realestate.com.au, Zillow, Redfin, Realtor.com — pre-underwritten daily, with each match cleared at conservative or flagged for review.</p>
+      <ul>
+        <li>Natural-language criteria: "Find me 4BR oceanfront under $1.5M with &gt;65% projected occupancy in NSW South Coast."</li>
+        <li>Daily match digest — usually 0–3 properties, never spammy.</li>
+        <li>Each match comes pre-underwritten at base, conservative, and stress; flagged with regulatory exposure within 800m of the address.</li>
+        <li>One-click "save to partner review" workflow with comments and assignment.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="release reveal">
+    <div class="release-meta"><div class="release-version">v 1.0</div><div class="release-date">01 Jan 2026</div><div class="release-tags"><span class="rel-tag ship">Ship</span></div></div>
+    <div>
+      <h2>Perchmark launches.</h2>
+      <p class="summary">87 cities, 6 countries. Markets, Properties, Comp Set, Underwriting, Regulatory Radar, and Portfolio. Live competitor pricing alerts at sub-4-hour latency. Free Scout tier forever.</p>
+      <ul>
+        <li>Initial coverage: AU (Byron, Gold Coast, Sunshine Coast, Sydney inner-west, NSW South Coast, Hunter Valley, Melbourne); US (Nashville, Tampa/St Pete, Scottsdale, Charleston); UK (Cornwall, Cotswolds, Lake District); NZ (Queenstown, Auckland, Wellington); CA (Toronto suburbs, Vancouver suburbs).</li>
+        <li>Six AI agents at launch: Market Pulse, Comp Set, Underwriter, Acquisition Scout, Regulatory Radar, Owner Report.</li>
+        <li>Starting prices: Scout free, Operator $39, Portfolio $99, Institutional $499+.</li>
+        <li>14-day full-feature trial on signup. No credit card.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 14C5 14 6 12 8 11C10 10 12 11 13 12C14.5 13.5 17 13 19 11C20.5 9.8 21 8 21 7" stroke="#FBFAF7" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="6" r="1.6" fill="#E76C4A"/><path d="M3 18H21" stroke="#FBFAF7" stroke-width="1.4" stroke-linecap="round" opacity=".4"/></svg> perchmark</div>
+      <p>The institutional-grade short-term rental intelligence platform. Built for serious investors. Calm at the top of the noise.</p>
+      <div class="meta">Operating globally · 6 countries · 87 markets</div>
+    </div>
+    <div><h4>Product</h4><ul><li><a href="index.html#product">Pulse</a></li><li><a href="index.html#features">Markets</a></li><li><a href="index.html#features">Properties</a></li><li><a href="index.html#features">Underwrite</a></li><li><a href="index.html#features">Scout</a></li><li><a href="index.html#features">Regulatory Radar</a></li><li><a href="index.html#features">Portfolio</a></li><li><a href="index.html#features">Reports</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="philosophy.html">Philosophy</a></li><li><a href="index.html#who">Customers</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="careers.html">Careers</a></li><li><a href="press.html">Press</a></li></ul></div>
+    <div><h4>Resources</h4><ul><li><a href="market-reports.html">Market reports</a></li><li><a href="regulation-tracker.html">Regulation tracker</a></li><li><a href="api.html">API docs</a></li><li><a href="help.html">Help center</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 2026 Perchmark · Worldwide</div><div>Independent · operator-grade · regulation-aware</div></div>
+</footer>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+reveals.forEach(el=>io.observe(el));
+const nav=document.querySelector('nav.top');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>20),{passive:true});
+</script>
+</body>
+</html>
