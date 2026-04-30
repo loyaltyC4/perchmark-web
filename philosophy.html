@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Philosophy — Perchmark</title>
+<meta name="description" content="The Perchmark philosophy: calm before clever, specific beats poetic, the discipline of measurement, the conviction to act." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--ink:#0E2438;--ink-90:rgba(14,36,56,.9);--ink-70:rgba(14,36,56,.7);--ink-50:rgba(14,36,56,.5);--ink-30:rgba(14,36,56,.3);--ink-12:rgba(14,36,56,.12);--ink-06:rgba(14,36,56,.06);--coral:#E76C4A;--cream:#F6F1E7;--salt:#FBFAF7;--sage:#5A8B7E;--rust:#B05544;--mist:#8B8B89;--ash:#E5E2DA;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--salt);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-size:16px}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--coral);color:var(--salt)}
+
+  nav.top{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;transition:all .3s ease;border-bottom:1px solid transparent}
+  nav.top.scrolled{background:rgba(251,250,247,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ink-06)}
+  .logo{font-family:'Fraunces',serif;font-size:22px;font-weight:500;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+  .logo svg{width:18px;height:18px}
+  nav .links{display:flex;gap:32px;font-size:14px;color:var(--ink-70)}
+  nav .links a:hover{color:var(--ink)}
+  nav .cta{display:flex;gap:12px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:8px;font-size:14px;font-weight:500;transition:all .2s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--ink);color:var(--salt)}
+  .btn-primary:hover{background:var(--coral)}
+  .btn-ghost{color:var(--ink-70)}
+  .btn-ghost:hover{color:var(--ink)}
+  .btn-coral{background:var(--coral);color:var(--salt)}
+  .btn-coral:hover{background:var(--ink)}
+  @media(max-width:720px){nav .links{display:none}}
+
+  .ph-head{padding:160px 32px 80px;max-width:880px;margin:0 auto;text-align:left}
+  .ph-eyebrow{font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:24px}
+  .ph-title{font-family:'Fraunces',serif;font-size:clamp(48px,7vw,96px);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:32px}
+  .ph-lede{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(20px,2.5vw,28px);font-weight:400;color:var(--ink-70);line-height:1.5;letter-spacing:-.005em;max-width:760px}
+
+  article{max-width:760px;margin:0 auto;padding:40px 32px 120px}
+  article h2{font-family:'Fraunces',serif;font-size:clamp(28px,3.5vw,42px);font-weight:500;letter-spacing:-.02em;line-height:1.15;margin-top:80px;margin-bottom:20px}
+  article h2:first-of-type{margin-top:48px}
+  article h3{font-family:'Fraunces',serif;font-size:22px;font-weight:500;line-height:1.3;margin-top:48px;margin-bottom:14px}
+  article p{font-size:18px;line-height:1.7;color:var(--ink-90);margin-bottom:20px}
+  article p.lede{font-size:21px;line-height:1.6}
+  article p strong{font-weight:600;color:var(--ink)}
+  article em{font-style:italic;color:var(--ink-90)}
+  article ul, article ol{margin:0 0 24px 24px;color:var(--ink-90)}
+  article li{font-size:18px;line-height:1.7;margin-bottom:10px}
+  article blockquote{font-family:'Fraunces',serif;font-style:italic;font-size:24px;line-height:1.4;color:var(--ink);padding:24px 32px;background:var(--cream);border-left:4px solid var(--coral);border-radius:0 14px 14px 0;margin:36px 0}
+  article hr{border:none;height:1px;background:var(--ink-12);margin:60px 0}
+  .pull{font-family:'Fraunces',serif;font-size:32px;font-weight:400;line-height:1.3;letter-spacing:-.01em;color:var(--ink);padding:36px 0;border-top:1px solid var(--ink-12);border-bottom:1px solid var(--ink-12);margin:48px 0;text-align:center}
+
+  .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:32px 0}
+  .principle{background:var(--cream);border:1px solid var(--ink-06);border-radius:14px;padding:22px}
+  .principle .pn{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:8px;font-weight:500}
+  .principle .pt{font-family:'Fraunces',serif;font-size:20px;font-weight:500;letter-spacing:-.005em;margin-bottom:6px}
+  .principle .pd{font-size:14px;color:var(--ink-70);line-height:1.55}
+  @media(max-width:720px){.principles{grid-template-columns:1fr}}
+
+  footer{background:var(--ink);color:var(--salt);padding:80px 32px 36px}
+  .footer-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+  .footer-brand .logo{color:var(--salt);margin-bottom:14px}
+  .footer-brand p{font-size:14px;color:rgba(251,250,247,.6);max-width:380px;margin-bottom:16px;line-height:1.6}
+  .footer-brand .meta{font-size:11px;color:rgba(251,250,247,.4);font-family:'JetBrains Mono',monospace}
+  footer h4{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:rgba(251,250,247,.5);font-weight:500;margin-bottom:14px}
+  footer ul{list-style:none;margin:0}
+  footer ul li{padding:5px 0}
+  footer ul li a{font-size:13px;color:rgba(251,250,247,.7);transition:color .2s}
+  footer ul li a:hover{color:var(--coral)}
+  .footer-bottom{max-width:1240px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(251,250,247,.1);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(251,250,247,.4);font-family:'JetBrains Mono',monospace}
+  @media(max-width:1080px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+  @media(max-width:720px){.footer-grid{grid-template-columns:1fr}}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a href="index.html" class="logo">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 14C5 14 6 12 8 11C10 10 12 11 13 12C14.5 13.5 17 13 19 11C20.5 9.8 21 8 21 7" stroke="#0E2438" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="6" r="1.6" fill="#E76C4A"/><path d="M3 18H21" stroke="#0E2438" stroke-width="1.4" stroke-linecap="round" opacity=".4"/></svg>
+    perchmark
+  </a>
+  <ul class="links">
+    <li><a href="index.html#features">Features</a></li>
+    <li><a href="index.html#product">Product</a></li>
+    <li><a href="index.html#who">Who it's for</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+  </ul>
+  <div class="cta">
+    <a class="btn btn-ghost" href="#">Sign in</a>
+    <a class="btn btn-primary" href="#">Request a demo →</a>
+  </div>
+</nav>
+
+<header class="ph-head reveal">
+  <div class="ph-eyebrow">Philosophy</div>
+  <h1 class="ph-title">A higher vantage point.</h1>
+  <p class="ph-lede">The STR market is loud. Twitter gurus, course sellers, conflicted data providers, YouTube hype merchants — everyone pitching the next inevitable. This is for the people who don't need more enthusiasm. They need a higher vantage point.</p>
+</header>
+
+<article>
+
+<h2 class="reveal">The name.</h2>
+
+<p class="reveal lede"><strong>Perch</strong> — the elevated point a sharp-eyed bird takes before it acts. <strong>Mark</strong> — the discipline of measurement and the conviction to act on what you see.</p>
+
+<p class="reveal">The product is the perch. The discipline is the mark. We measure quietly so that when you act, you act with conviction. We are not a hype platform. We are not a course. We are not selling the dream of passive income. We are the calm, accurate, regulation-aware intelligence layer that helps people who are already serious become more decisive.</p>
+
+<blockquote class="reveal">Calm before clever. Specific beats poetic. The data speaks loudly so the product can speak softly.</blockquote>
+
+<h2 class="reveal">Voice principles.</h2>
+
+<p class="reveal">How we write everything — alerts, reports, marketing, emails, error messages.</p>
+
+<div class="principles reveal">
+  <div class="principle"><div class="pn">01</div><div class="pt">Calm before clever.</div><div class="pd">No exclamation marks in marketing copy. No "AI-powered." No "unlock." No "synergy." The product speaks softly because the data speaks loudly.</div></div>
+  <div class="principle"><div class="pn">02</div><div class="pt">Specific beats poetic.</div><div class="pd">"Byron Shire ADR rose 8.4% YoY through Q1 2026" beats "the market is booming." Numbers are the rhetoric. Specificity is the proof.</div></div>
+  <div class="principle"><div class="pn">03</div><div class="pt">Honest about what we don't do.</div><div class="pd">We don't run dynamic pricing. We don't manage your guests. We don't sell deal flow. We tell you which markets, which properties, when to act. That clarity is itself a brand asset.</div></div>
+  <div class="principle"><div class="pn">04</div><div class="pt">Dry, never preachy.</div><div class="pd">A slight Australian flatness. Confident without being earnest. Closer to <em>Monocle</em> than <em>Harvard Business Review</em>. Closer to <em>The Economist</em>'s wit than <em>TED</em>'s self-importance.</div></div>
+  <div class="principle"><div class="pn">05</div><div class="pt">Verbs over adjectives.</div><div class="pd">Forecast. Map. Benchmark. Underwrite. Surface. Track. Flag. Not "powerful." Not "comprehensive." Not "intelligent."</div></div>
+  <div class="principle"><div class="pn">06</div><div class="pt">Citation, always.</div><div class="pd">Every metric carries its source. Every regulatory alert points to the document that triggered it. Every projection shows its assumptions. The number you act on is the number you can defend.</div></div>
+</div>
+
+<h2 class="reveal">Low floor. High ceiling. Wide walls.</h2>
+
+<p class="reveal">A first-time investor, ten minutes after signup, can answer the question <em>"is the market I'm thinking about still good?"</em> without reading documentation, without picking parameters, without paying. That is the <strong>low floor</strong>.</p>
+
+<p class="reveal">A 200-property portfolio operator can build an automated regulatory radar, run multi-market comp benchmarking, model 12-month acquisition scenarios, and feed the data into their PMS via API. The product never tells them they've outgrown it. That is the <strong>high ceiling</strong>.</p>
+
+<p class="reveal">The same product serves three personas with different mental models — the investor's "is this a good deal," the operator's "how am I doing vs. the market," the agent's "what does this property earn." That is the <strong>wide walls</strong>.</p>
+
+<p class="reveal">This is the design principle from Mitchel Resnick and Seymour Papert's MIT educational design work. Notion can be a single-page note or a 100-page company wiki. Perchmark can be a single market check or a portfolio operating system. The pricing tiers reflect the ceiling, not the depth of the floor.</p>
+
+<div class="pull reveal">"The product is the perch. The discipline is the mark."</div>
+
+<h2 class="reveal">Independent. By design.</h2>
+
+<p class="reveal">When the data layer for serious capital gets owned by the operators who use it, the truth gets thinner. So we built it the other way around.</p>
+
+<p class="reveal">We don't manage properties. We don't run pricing engines. We don't sell deal flow. We have nothing to sell you except the truth. The acquisition we surface is the one the data points to — not the one a partner paid us to highlight. The market we flag as cooked is the one the data says is cooked, even if a deal-flow partner would prefer we didn't.</p>
+
+<p class="reveal">The intelligence layer stays upstream of the action layer. We don't have a horse in the race.</p>
+
+<h2 class="reveal">What we will not do.</h2>
+
+<ul class="reveal">
+  <li><strong>We will not sell sponsored placements.</strong> No "featured listings." No "recommended markets" that paid for placement.</li>
+  <li><strong>We will not run a brokerage or management arm.</strong> The day the company that runs the data also runs operations is the day the data becomes a sales tool. We won't.</li>
+  <li><strong>We will not invent precision.</strong> Every confidence interval is honest. When the data is thin, the platform says so. When a market is too small to compute reliably, we don't extrapolate to make a number show up — we tell you the data is thin.</li>
+  <li><strong>We will not tell you what the market wants to hear.</strong> If your portfolio is underperforming, the platform says so. If a market you've watched for six months is cooked, the platform says so. The job is the truth.</li>
+  <li><strong>We will not sell your data.</strong> Your watchlists, your portfolio links, your underwriting models — yours. Encrypted at rest, enterprise-grade auth, audit logs. We don't sell aggregated insights from your usage. Period.</li>
+</ul>
+
+<h2 class="reveal">The bird metaphor, taken seriously.</h2>
+
+<p class="reveal">A kingfisher takes a perch above a stream and watches. It doesn't move every time a fish moves. It moves when the right fish moves at the right depth at the right speed. The economics of patience are baked into the species.</p>
+
+<p class="reveal">Most STR investors and operators we've met are punished, not rewarded, for activity. Activity is cheap; conviction is rare. The right move is usually to do nothing — except when it isn't, and then the right move is to act fast and decisively.</p>
+
+<p class="reveal">A platform that surfaces three things to know today, with the data and the citation and the modeled impact, is a platform built for that kind of decision-making. The other 364 things you might think about? Skip them. We'll tell you when one matters.</p>
+
+<div class="pull reveal">"Three things to know. Today. Every day."</div>
+
+<h2 class="reveal">A note on the typography.</h2>
+
+<p class="reveal">The headlines are set in <strong>Fraunces</strong>, an editorial serif from the Undercase Type foundry. We chose it for the optical-size axis (which lets a single typeface feel right at 12pt and 96pt) and for its slight warmth — closer to a coastal Australian afternoon than to a New York corporate office.</p>
+
+<p class="reveal">Body text is <strong>Inter</strong>. The numbers in dashboards are <strong>JetBrains Mono</strong>. Both are open-source. Both work at every scale. Both stay out of the way of the data.</p>
+
+<p class="reveal">The accent color is <strong>Kingfisher Coral</strong> — the only emotional color in the system. It marks calls-to-action and signal moments. Everything else is Driftwood Ink (deep navy with a hint of warmth), Sandstone Cream (warmer than off-white), and Salt White (almost white, with the slightest warmth). The palette is called <em>Coastal Clarity</em>.</p>
+
+<hr class="reveal" />
+
+<p class="reveal" style="font-family:'Fraunces',serif;font-size:24px;line-height:1.4;text-align:center;color:var(--ink-70);font-style:italic">Perch above the noise.</p>
+
+<p class="reveal" style="text-align:center;font-size:13px;color:var(--ink-50);font-family:'JetBrains Mono',monospace;letter-spacing:.06em;margin-top:32px">— The Perchmark stance</p>
+
+</article>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 14C5 14 6 12 8 11C10 10 12 11 13 12C14.5 13.5 17 13 19 11C20.5 9.8 21 8 21 7" stroke="#FBFAF7" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="6" r="1.6" fill="#E76C4A"/><path d="M3 18H21" stroke="#FBFAF7" stroke-width="1.4" stroke-linecap="round" opacity=".4"/></svg> perchmark</div>
+      <p>The institutional-grade short-term rental intelligence platform. Built for serious investors. Calm at the top of the noise.</p>
+      <div class="meta">Operating globally · 6 countries · 87 markets</div>
+    </div>
+    <div><h4>Product</h4><ul><li><a href="index.html#product">Pulse</a></li><li><a href="index.html#features">Markets</a></li><li><a href="index.html#features">Properties</a></li><li><a href="index.html#features">Underwrite</a></li><li><a href="index.html#features">Scout</a></li><li><a href="index.html#features">Regulatory Radar</a></li><li><a href="index.html#features">Portfolio</a></li><li><a href="index.html#features">Reports</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="philosophy.html">Philosophy</a></li><li><a href="index.html#who">Customers</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="careers.html">Careers</a></li><li><a href="press.html">Press</a></li></ul></div>
+    <div><h4>Resources</h4><ul><li><a href="market-reports.html">Market reports</a></li><li><a href="regulation-tracker.html">Regulation tracker</a></li><li><a href="api.html">API docs</a></li><li><a href="help.html">Help center</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 2026 Perchmark · Worldwide</div><div>Independent · operator-grade · regulation-aware</div></div>
+</footer>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+reveals.forEach(el=>io.observe(el));
+const nav=document.querySelector('nav.top');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>20),{passive:true});
+</script>
+</body>
+</html>
