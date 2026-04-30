@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy — Perchmark</title>
+<meta name="description" content="How Perchmark handles your data. Plain English. No tricks." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--ink:#0E2438;--ink-90:rgba(14,36,56,.9);--ink-70:rgba(14,36,56,.7);--ink-50:rgba(14,36,56,.5);--ink-30:rgba(14,36,56,.3);--ink-12:rgba(14,36,56,.12);--ink-06:rgba(14,36,56,.06);--coral:#E76C4A;--cream:#F6F1E7;--salt:#FBFAF7;--sage:#5A8B7E;--rust:#B05544;--ash:#E5E2DA;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--salt);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;font-size:16px}
+  a{color:var(--coral);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+  a:hover{border-bottom-color:var(--coral)}
+  ::selection{background:var(--coral);color:var(--salt)}
+  nav.top{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;transition:all .3s ease;border-bottom:1px solid transparent}
+  nav.top.scrolled{background:rgba(251,250,247,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ink-06)}
+  nav a.logo{color:inherit;border:none}
+  .logo{font-family:'Fraunces',serif;font-size:22px;font-weight:500;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+  .logo svg{width:18px;height:18px}
+  nav .links{display:flex;gap:32px;font-size:14px;color:var(--ink-70);list-style:none}
+  nav .links a{border:none;color:var(--ink-70)}
+  nav .links a:hover{color:var(--ink)}
+  nav .cta{display:flex;gap:12px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:8px;font-size:14px;font-weight:500;transition:all .2s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--ink);color:var(--salt)}
+  .btn-primary:hover{background:var(--coral)}
+  .btn-ghost{color:var(--ink-70);border:none}
+  .btn-ghost:hover{color:var(--ink)}
+  @media(max-width:720px){nav .links{display:none}}
+  .ph-head{padding:160px 32px 60px;max-width:760px;margin:0 auto}
+  .ph-eyebrow{font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:24px}
+  .ph-title{font-family:'Fraunces',serif;font-size:clamp(48px,7vw,84px);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:24px}
+  .ph-lede{font-family:'Fraunces',serif;font-style:italic;font-size:21px;color:var(--ink-70);max-width:640px;line-height:1.5}
+  .ph-meta{margin-top:18px;font-size:12px;color:var(--ink-50);font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
+  article{max-width:760px;margin:0 auto;padding:40px 32px 100px}
+  article .toc{background:var(--cream);border:1px solid var(--ink-06);border-radius:14px;padding:22px 26px;margin-bottom:48px}
+  article .toc h4{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-50);font-weight:500;margin-bottom:12px;font-family:'Inter',sans-serif}
+  article .toc ol{list-style:none;counter-reset:toc;padding:0;columns:2;column-gap:32px}
+  article .toc ol li{counter-increment:toc;padding:5px 0;font-size:14px;break-inside:avoid}
+  article .toc ol li:before{content:counter(toc,decimal-leading-zero) ".";font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-50);margin-right:8px}
+  article .toc a{color:var(--ink);border:none}
+  article .toc a:hover{color:var(--coral)}
+  article h2{font-family:'Fraunces',serif;font-size:30px;font-weight:500;letter-spacing:-.01em;line-height:1.2;margin-top:64px;margin-bottom:18px;scroll-margin-top:100px}
+  article h2:first-of-type{margin-top:0}
+  article h2 .num{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--coral);font-weight:500;display:block;margin-bottom:8px;letter-spacing:.04em}
+  article h3{font-family:'Fraunces',serif;font-size:20px;font-weight:500;line-height:1.3;margin-top:32px;margin-bottom:12px}
+  article p{font-size:16px;line-height:1.75;color:var(--ink-90);margin-bottom:16px}
+  article p strong{font-weight:600;color:var(--ink)}
+  article ul{margin:0 0 18px 22px}
+  article li{font-size:16px;line-height:1.75;margin-bottom:8px;color:var(--ink-90)}
+  article .callout{background:var(--cream);border-left:3px solid var(--coral);border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15px;color:var(--ink);line-height:1.6}
+  article .callout strong{font-weight:600;color:var(--ink)}
+  article hr{border:none;height:1px;background:var(--ink-12);margin:48px 0}
+  footer{background:var(--ink);color:var(--salt);padding:80px 32px 36px}
+  .footer-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+  .footer-brand .logo{color:var(--salt);margin-bottom:14px}
+  .footer-brand p{font-size:14px;color:rgba(251,250,247,.6);max-width:380px;margin-bottom:16px;line-height:1.6}
+  .footer-brand .meta{font-size:11px;color:rgba(251,250,247,.4);font-family:'JetBrains Mono',monospace}
+  footer h4{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:rgba(251,250,247,.5);font-weight:500;margin-bottom:14px}
+  footer ul{list-style:none;margin:0}
+  footer ul li{padding:5px 0}
+  footer ul li a{font-size:13px;color:rgba(251,250,247,.7);transition:color .2s;border:none}
+  footer ul li a:hover{color:var(--coral)}
+  .footer-bottom{max-width:1240px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(251,250,247,.1);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(251,250,247,.4);font-family:'JetBrains Mono',monospace}
+  @media(max-width:1080px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+  @media(max-width:720px){.footer-grid{grid-template-columns:1fr};article .toc ol{columns:1}}
+</style>
+</head>
+<body>
+<nav class="top">
+  <a href="index.html" class="logo"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 14C5 14 6 12 8 11C10 10 12 11 13 12C14.5 13.5 17 13 19 11C20.5 9.8 21 8 21 7" stroke="#0E2438" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="6" r="1.6" fill="#E76C4A"/><path d="M3 18H21" stroke="#0E2438" stroke-width="1.4" stroke-linecap="round" opacity=".4"/></svg> perchmark</a>
+  <ul class="links"><li><a href="index.html#features">Features</a></li><li><a href="index.html#product">Product</a></li><li><a href="index.html#who">Who it's for</a></li><li><a href="index.html#pricing">Pricing</a></li></ul>
+  <div class="cta"><a class="btn btn-ghost" href="#">Sign in</a><a class="btn btn-primary" href="#">Request a demo →</a></div>
+</nav>
+
+<header class="ph-head">
+  <div class="ph-eyebrow">Privacy</div>
+  <h1 class="ph-title">Plain English. No tricks.</h1>
+  <p class="ph-lede">How we collect, use, and protect your data — written so you don't need a lawyer to read it.</p>
+  <div class="ph-meta">Effective 30 April 2026 · Last updated 30 April 2026 · Version 2.7</div>
+</header>
+
+<article>
+<div class="toc"><h4>Contents</h4><ol><li><a href="#summary">The two-sentence summary</a></li><li><a href="#what">What we collect</a></li><li><a href="#why">Why we collect it</a></li><li><a href="#share">Who we share it with</a></li><li><a href="#never">What we never do</a></li><li><a href="#rights">Your rights</a></li><li><a href="#security">Security</a></li><li><a href="#cookies">Cookies + analytics</a></li><li><a href="#retention">Retention</a></li><li><a href="#contact">Contact</a></li></ol></div>
+
+<h2 id="summary"><span class="num">01</span>The two-sentence summary.</h2>
+<p>We collect what we need to run the product (your account, your watchlists, your portfolio, your usage) and nothing else. We don't sell your data, we don't share it with advertisers, and we don't use your portfolio or watchlists to train any model that anyone outside your account will see.</p>
+<div class="callout"><strong>Plain English:</strong> if it isn't required to make Perchmark work for you, we don't want it on our servers.</div>
+
+<h2 id="what"><span class="num">02</span>What we collect.</h2>
+<h3>Account information</h3>
+<p>Your name, email, billing details, and any organisation name you provide. If you sign in via SSO (Google, Microsoft), we receive your email and a unique identifier from the provider. We do not see or store your password if you use SSO.</p>
+<h3>Product usage</h3>
+<p>Which markets you watch, which properties you look up, which reports you generate, which views you spend time in. This is how we personalise the daily brief, the activity feed, and the alerts. It also drives our internal analytics (count of feature usage, retention, etc.) — anonymised and aggregated.</p>
+<h3>Connected accounts</h3>
+<p>If you connect a Hostaway, Guesty, Hostfully, or Lodgify account (Institutional plans), we receive listing-level performance data from those platforms via their official APIs. We use OAuth where supported. We never receive your guest data — only the listing-level rates and bookings needed for portfolio benchmarking.</p>
+<h3>Communications</h3>
+<p>Support tickets, demo conversations, sales calls, and product feedback. We keep these so we can give you continuity when you talk to us again.</p>
+
+<h2 id="why"><span class="num">03</span>Why we collect it.</h2>
+<ul><li><strong>To run the product.</strong> Your account exists. Your watchlists need to be saved. Your alerts need to fire.</li><li><strong>To bill you.</strong> Stripe handles card processing. We see invoice metadata, not card numbers.</li><li><strong>To improve the product.</strong> We look at aggregated usage to decide what to build next. We don't look at individual portfolios for product decisions.</li><li><strong>To support you.</strong> When you raise a ticket, we may look at recent product usage to diagnose what's happening on your account. Always with your consent in the ticket reply.</li><li><strong>To meet legal obligations.</strong> Tax, audit, anti-fraud requirements where they apply.</li></ul>
+
+<h2 id="share"><span class="num">04</span>Who we share it with.</h2>
+<p>A short list. We will keep it short.</p>
+<ul><li><strong>Hosting + infrastructure:</strong> AWS (eu-west-2 / Sydney / us-east-1). Encrypted at rest. Access logged.</li><li><strong>Email delivery:</strong> Postmark (transactional). Mailgun (digests).</li><li><strong>Billing:</strong> Stripe.</li><li><strong>Customer support tooling:</strong> Plain.com, Linear (engineering), Notion (internal docs).</li><li><strong>Analytics:</strong> Plausible (privacy-respecting, no cookies, no fingerprinting).</li><li><strong>Connected service providers:</strong> if you connect a PMS (Hostaway, Guesty, etc.), the data flows from their servers to ours via their official APIs. They have their own privacy policies.</li></ul>
+<p>We do not share with advertisers. We do not share with data brokers. We do not share with anyone running an STR brokerage, management company, or pricing tool — including any of our investors.</p>
+
+<h2 id="never"><span class="num">05</span>What we never do.</h2>
+<div class="callout"><strong>We never sell your data.</strong> Not anonymised, not aggregated, not in bulk to a third party. Period.<br><br><strong>We never train AI models on your private portfolio.</strong> The agents that read your watchlists, your portfolio links, and your underwriting models do so only within your account, only for your output. Nothing crosses the boundary.<br><br><strong>We never enable retargeting pixels.</strong> No Facebook pixel, no LinkedIn insight tag, no Google Ads tracking — anywhere on the marketing site or in the product.<br><br><strong>We never read your guest data.</strong> Connected PMS integrations are scoped to listing-level performance (rates, bookings, occupancy) — not guest names, emails, or messages.</div>
+
+<h2 id="rights"><span class="num">06</span>Your rights.</h2>
+<p>You have the right to:</p>
+<ul><li><strong>Access</strong> the data we hold about you. Request via <a href="mailto:privacy@perchmark.com.au">privacy@perchmark.com.au</a>; we'll respond within 14 days.</li><li><strong>Correct</strong> inaccurate data. Most fields you can edit yourself in account settings.</li><li><strong>Delete</strong> your account and all associated data. We retain billing records for 7 years where tax law requires; everything else is irreversibly deleted within 30 days.</li><li><strong>Export</strong> your data — your watchlists, your portfolio, your saved searches, your reports — in JSON or CSV.</li><li><strong>Opt out</strong> of any marketing emails (in-product preferences). Transactional emails (alerts you've configured, billing receipts) cannot be opted out without disabling the underlying feature.</li><li><strong>Object</strong> to specific processing. We'll review every objection on its merits and respond within 14 days.</li></ul>
+
+<h2 id="security"><span class="num">07</span>Security.</h2>
+<p>What we do, in plain language:</p>
+<ul><li>Encryption in transit (TLS 1.3) and at rest (AES-256).</li><li>Single-tenant Postgres with row-level security keyed to your organisation.</li><li>OAuth 2.0 + SSO available on Portfolio and Institutional plans.</li><li>Two-factor authentication available on every plan; required on Institutional.</li><li>Role-based access control (RBAC) on Institutional — you control which seat sees which markets, properties, and reports.</li><li>SOC 2 Type 2 audit underway (estimated completion Q3 2026). ISO 27001 audit scheduled to follow.</li><li>Penetration tests by an independent firm twice a year.</li><li>Security disclosure: <a href="mailto:security@perchmark.com.au">security@perchmark.com.au</a> — we acknowledge within 24 hours and pay a bounty for confirmed vulnerabilities.</li></ul>
+
+<h2 id="cookies"><span class="num">08</span>Cookies and analytics.</h2>
+<p>We use a minimal cookie set:</p>
+<ul><li><strong>Session cookies</strong> for authentication. Required.</li><li><strong>Preferences cookies</strong> (timezone, currency, theme) so the product remembers your settings.</li></ul>
+<p>That's it. No third-party tracking cookies. We use Plausible for site analytics — it does not use cookies and does not fingerprint visitors.</p>
+
+<h2 id="retention"><span class="num">09</span>Retention.</h2>
+<ul><li>Active account data: kept while the account is active.</li><li>Cancelled account data: deleted within 30 days of cancellation, except billing records (7 years for tax compliance).</li><li>Support tickets: retained for 24 months after closure, then deleted.</li><li>Aggregated, anonymised usage analytics: retained indefinitely (cannot be linked back to you).</li><li>Backups: encrypted, retained for 35 days, then automatically deleted.</li></ul>
+
+<h2 id="contact"><span class="num">10</span>Contact.</h2>
+<p>Privacy questions: <a href="mailto:privacy@perchmark.com.au">privacy@perchmark.com.au</a><br>Security disclosures: <a href="mailto:security@perchmark.com.au">security@perchmark.com.au</a><br>Data Protection Officer: Catherine Liang, <a href="mailto:dpo@perchmark.com.au">dpo@perchmark.com.au</a></p>
+<p>Postal address: Perchmark Pty Ltd, Level 2, 580 George St, Sydney NSW 2000, Australia.</p>
+<p>If you live in the EU/EEA or UK, you have the right to lodge a complaint with your national data protection authority.</p>
+<hr />
+<p style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-50);text-align:center">If we change this policy, we'll email every active account at least 30 days before the change takes effect. We'll never quietly retroactively expand what we collect.</p>
+</article>
+
+<footer><div class="footer-grid"><div class="footer-brand"><div class="logo"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 14C5 14 6 12 8 11C10 10 12 11 13 12C14.5 13.5 17 13 19 11C20.5 9.8 21 8 21 7" stroke="#FBFAF7" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="6" r="1.6" fill="#E76C4A"/><path d="M3 18H21" stroke="#FBFAF7" stroke-width="1.4" stroke-linecap="round" opacity=".4"/></svg> perchmark</div><p>The institutional-grade short-term rental intelligence platform. Built for serious investors. Calm at the top of the noise.</p><div class="meta">Operating globally · 6 countries · 87 markets</div></div><div><h4>Product</h4><ul><li><a href="index.html#product">Pulse</a></li><li><a href="index.html#features">Markets</a></li><li><a href="index.html#features">Properties</a></li><li><a href="index.html#features">Underwrite</a></li><li><a href="index.html#features">Scout</a></li><li><a href="index.html#features">Regulatory Radar</a></li><li><a href="index.html#features">Portfolio</a></li><li><a href="index.html#features">Reports</a></li></ul></div><div><h4>Company</h4><ul><li><a href="philosophy.html">Philosophy</a></li><li><a href="index.html#who">Customers</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="careers.html">Careers</a></li><li><a href="press.html">Press</a></li></ul></div><div><h4>Resources</h4><ul><li><a href="market-reports.html">Market reports</a></li><li><a href="regulation-tracker.html">Regulation tracker</a></li><li><a href="api.html">API docs</a></li><li><a href="help.html">Help center</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div></div><div class="footer-bottom"><div>© 2026 Perchmark · Worldwide</div><div>Independent · operator-grade · regulation-aware</div></div></footer>
+<script>const nav=document.querySelector('nav.top');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>20),{passive:true});</script>
+</body>
+</html>
