@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms — Perchmark</title>
+<meta name="description" content="The agreement between you and Perchmark. Plain English." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--ink:#0E2438;--ink-90:rgba(14,36,56,.9);--ink-70:rgba(14,36,56,.7);--ink-50:rgba(14,36,56,.5);--ink-30:rgba(14,36,56,.3);--ink-12:rgba(14,36,56,.12);--ink-06:rgba(14,36,56,.06);--coral:#E76C4A;--cream:#F6F1E7;--salt:#FBFAF7;--sage:#5A8B7E;--rust:#B05544;--ash:#E5E2DA;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--salt);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;font-size:16px}
+  a{color:var(--coral);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+  a:hover{border-bottom-color:var(--coral)}
+  ::selection{background:var(--coral);color:var(--salt)}
+  nav.top{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;transition:all .3s ease;border-bottom:1px solid transparent}
+  nav.top.scrolled{background:rgba(251,250,247,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--ink-06)}
+  nav a.logo{color:inherit;border:none}
+  .logo{font-family:'Fraunces',serif;font-size:22px;font-weight:500;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+  .logo svg{width:18px;height:18px}
+  nav .links{display:flex;gap:32px;font-size:14px;color:var(--ink-70);list-style:none}
+  nav .links a{border:none;color:var(--ink-70)}
+  nav .links a:hover{color:var(--ink)}
+  nav .cta{display:flex;gap:12px;align-items:center}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:8px;font-size:14px;font-weight:500;transition:all .2s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--ink);color:var(--salt)}
+  .btn-primary:hover{background:var(--coral)}
+  .btn-ghost{color:var(--ink-70);border:none}
+  .btn-ghost:hover{color:var(--ink)}
+  @media(max-width:720px){nav .links{display:none}}
+  .ph-head{padding:160px 32px 60px;max-width:760px;margin:0 auto}
+  .ph-eyebrow{font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--coral);margin-bottom:24px}
+  .ph-title{font-family:'Fraunces',serif;font-size:clamp(48px,7vw,84px);font-weight:400;line-height:1.05;letter-spacing:-.025em;margin-bottom:24px}
+  .ph-lede{font-family:'Fraunces',serif;font-style:italic;font-size:21px;color:var(--ink-70);max-width:640px;line-height:1.5}
+  .ph-meta{margin-top:18px;font-size:12px;color:var(--ink-50);font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
+  article{max-width:760px;margin:0 auto;padding:40px 32px 100px}
+  article .toc{background:var(--cream);border:1px solid var(--ink-06);border-radius:14px;padding:22px 26px;margin-bottom:48px}
+  article .toc h4{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-50);font-weight:500;margin-bottom:12px;font-family:'Inter',sans-serif}
+  article .toc ol{list-style:none;counter-reset:toc;padding:0;columns:2;column-gap:32px}
+  article .toc ol li{counter-increment:toc;padding:5px 0;font-size:14px;break-inside:avoid}
+  article .toc ol li:before{content:counter(toc,decimal-leading-zero) ".";font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-50);margin-right:8px}
+  article .toc a{color:var(--ink);border:none}
+  article .toc a:hover{color:var(--coral)}
+  article h2{font-family:'Fraunces',serif;font-size:30px;font-weight:500;letter-spacing:-.01em;line-height:1.2;margin-top:64px;margin-bottom:18px;scroll-margin-top:100px}
+  article h2:first-of-type{margin-top:0}
+  article h2 .num{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--coral);font-weight:500;display:block;margin-bottom:8px;letter-spacing:.04em}
+  article p{font-size:16px;line-height:1.75;color:var(--ink-90);margin-bottom:16px}
+  article p strong{font-weight:600;color:var(--ink)}
+  article ul{margin:0 0 18px 22px}
+  article li{font-size:16px;line-height:1.75;margin-bottom:8px;color:var(--ink-90)}
+  article .callout{background:var(--cream);border-left:3px solid var(--coral);border-radius:0 12px 12px 0;padding:18px 22px;margin:24px 0;font-size:15px;color:var(--ink);line-height:1.6}
+  article hr{border:none;height:1px;background:var(--ink-12);margin:48px 0}
+  footer{background:var(--ink);color:var(--salt);padding:80px 32px 36px}
+  .footer-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+  .footer-brand .logo{color:var(--salt);margin-bottom:14px}
+  .footer-brand p{font-size:14px;color:rgba(251,250,247,.6);max-width:380px;margin-bottom:16px;line-height:1.6}
+  .footer-brand .meta{font-size:11px;color:rgba(251,250,247,.4);font-family:'JetBrains Mono',monospace}
+  footer h4{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:rgba(251,250,247,.5);font-weight:500;margin-bottom:14px}
+  footer ul{list-style:none;margin:0}
+  footer ul li{padding:5px 0}
+  footer ul li a{font-size:13px;color:rgba(251,250,247,.7);transition:color .2s;border:none}
+  footer ul li a:hover{color:var(--coral)}
+  .footer-bottom{max-width:1240px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(251,250,247,.1);display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(251,250,247,.4);font-family:'JetBrains Mono',monospace}
+  @media(max-width:1080px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
+  @media(max-width:720px){.footer-grid{grid-template-columns:1fr}; article .toc ol{columns:1}}
+</style>
+</head>
+<body>
+<nav class="top">
+  <a href="index.html" class="logo"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 14C5 14 6 12 8 11C10 10 12 11 13 12C14.5 13.5 17 13 19 11C20.5 9.8 21 8 21 7" stroke="#0E2438" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="6" r="1.6" fill="#E76C4A"/><path d="M3 18H21" stroke="#0E2438" stroke-width="1.4" stroke-linecap="round" opacity=".4"/></svg> perchmark</a>
+  <ul class="links"><li><a href="index.html#features">Features</a></li><li><a href="index.html#product">Product</a></li><li><a href="index.html#who">Who it's for</a></li><li><a href="index.html#pricing">Pricing</a></li></ul>
+  <div class="cta"><a class="btn btn-ghost" href="#">Sign in</a><a class="btn btn-primary" href="#">Request a demo →</a></div>
+</nav>
+
+<header class="ph-head">
+  <div class="ph-eyebrow">Terms of Service</div>
+  <h1 class="ph-title">The agreement.</h1>
+  <p class="ph-lede">Between you and Perchmark Pty Ltd. We've kept it as short as we can without leaving anything material out.</p>
+  <div class="ph-meta">Effective 30 April 2026 · Last updated 30 April 2026 · Version 2.7</div>
+</header>
+
+<article>
+<div class="toc"><h4>Contents</h4><ol><li><a href="#deal">The deal in 30 seconds</a></li><li><a href="#account">Your account</a></li><li><a href="#use">Acceptable use</a></li><li><a href="#data">Your data, your output</a></li><li><a href="#payment">Payment + cancellation</a></li><li><a href="#trial">Trial and free tier</a></li><li><a href="#warranty">Warranty + disclaimer</a></li><li><a href="#liability">Liability cap</a></li><li><a href="#changes">Changes to terms</a></li><li><a href="#law">Governing law</a></li></ol></div>
+
+<h2 id="deal"><span class="num">01</span>The deal in 30 seconds.</h2>
+<p>You pay us a subscription. We give you access to Perchmark and the data, intelligence, and AI agents inside it. You can cancel any time. We can suspend service if you abuse the system or don't pay. Neither of us is responsible for things outside our control.</p>
+<div class="callout">Perchmark is a decision-support tool. It is not a financial advisor, not a tax advisor, and not a substitute for your own due diligence. Acquisition and pricing decisions are yours.</div>
+
+<h2 id="account"><span class="num">02</span>Your account.</h2>
+<p>You create an account, you keep your credentials safe, you're responsible for activity on it. Don't share login details. If you suspect a breach, email <a href="mailto:security@perchmark.com.au">security@perchmark.com.au</a> and we'll lock the account immediately while we investigate.</p>
+<p>Plans with multiple seats: each human gets one seat. Don't share a single seat across multiple users — it breaks audit trails and may breach compliance for institutional users.</p>
+
+<h2 id="use"><span class="num">03</span>Acceptable use.</h2>
+<p>Things you can do:</p>
+<ul><li>Use Perchmark to research, underwrite, and operate STR properties — yours or your clients'.</li><li>Export data and reports for your own business use.</li><li>White-label reports under our white-label terms (Portfolio + Institutional).</li><li>Connect Perchmark to your PMS, your spreadsheets, your team's Slack, your custom dashboard.</li></ul>
+<p>Things you can't do:</p>
+<ul><li>Resell or redistribute the underlying data feed without an Institutional contract.</li><li>Reverse-engineer the platform, our agents, or our APIs.</li><li>Use Perchmark to scrape Airbnb, VRBO, Stayz, or any other source directly. We pay for the data via licensed providers; reusing our outputs to backfill your own scraping operation is a breach.</li><li>Run automated tooling that bypasses rate limits.</li><li>Build a competing data-intelligence product using our outputs.</li><li>Use the platform for any unlawful purpose, harassment, or harm.</li></ul>
+
+<h2 id="data"><span class="num">04</span>Your data, your output.</h2>
+<p>Anything you create on Perchmark — watchlists, portfolio links, reports, custom comp sets, API integrations — is yours. We do not claim ownership. You can export it any time. If you cancel, we delete it within 30 days (see Privacy).</p>
+<p>Anything Perchmark produces (intelligence layer, market scores, regulatory data, AI agent outputs) is licensed to you for your business use under your active subscription. The license ends with your subscription.</p>
+
+<h2 id="payment"><span class="num">05</span>Payment + cancellation.</h2>
+<ul><li>Plans are billed monthly or annually in advance. Annual plans get a discount and lock in the price for the year.</li><li>Currency: USD or AUD at the rates published on the Pricing page. We don't surprise-convert.</li><li>Cancellation: any time, from your account settings. Service continues to the end of the current billing cycle. No pro-rated refund on monthly plans.</li><li>Annual plan refunds: pro-rated for the unused portion if you cancel within 30 days. After 30 days, the annual fee is non-refundable except where required by law.</li><li>Failed payments: we attempt the charge three times over 7 days. If all attempts fail, we suspend service. We don't auto-cancel — your data stays for 30 days while you sort it out.</li><li>Add-ons (extra markets, query top-ups, additional seats) are billed at the next renewal cycle, not pro-rated mid-cycle.</li></ul>
+
+<h2 id="trial"><span class="num">06</span>Trial and free tier.</h2>
+<p>Free Scout is free forever — no card required. Use it as long as you like.</p>
+<p>The 14-day Operator/Portfolio trial gives you full access to either tier (you choose). No credit card. Trial converts to free Scout if you don't subscribe — we don't auto-bill.</p>
+
+<h2 id="warranty"><span class="num">07</span>Warranty + disclaimer.</h2>
+<p>We do our best to keep Perchmark accurate, current, and available. We commit to specific service levels in Institutional contracts (99.9% uptime SLA). For self-serve plans, the platform is provided "as is."</p>
+<p><strong>Things we explicitly disclaim:</strong></p>
+<ul><li>The data we surface comes from public sources and licensed providers. We can't guarantee every metric is perfect every minute. We can guarantee the source citation is honest.</li><li>AI agent outputs are advisory, not directive. The Underwriter Agent's "verdict" is a synthesis of our model — it is not a fiduciary recommendation. Don't sign a mortgage on it without your own diligence.</li><li>Regulatory data is current to the best of our knowledge at the timestamp shown. Councils sometimes update their rules without telling anyone. Always confirm with the council before making decisions with legal consequences.</li><li>Future projections are projections. The future is not the past. We model with confidence intervals; we don't promise outcomes.</li></ul>
+
+<h2 id="liability"><span class="num">08</span>Liability cap.</h2>
+<p>Each party's liability is capped at the fees you paid us in the 12 months before the incident giving rise to the claim. Neither party is liable for indirect, consequential, or punitive damages — lost profits, lost data, business interruption, etc.</p>
+<p>This cap doesn't apply to: (a) wilful misconduct or fraud; (b) breach of confidentiality; (c) infringement of intellectual property; (d) any obligation that cannot be limited under applicable law.</p>
+
+<h2 id="changes"><span class="num">09</span>Changes to terms.</h2>
+<p>We can update these terms. Material changes (anything that meaningfully affects your rights or pricing) get at least 30 days notice via email. Non-material changes (typo fixes, clarifications) take effect on the date posted. The latest version is always at perchmark.com.au/terms with a version number and effective date at the top.</p>
+
+<h2 id="law"><span class="num">10</span>Governing law.</h2>
+<p>These terms are governed by the laws of New South Wales, Australia. Any dispute that we can't resolve through good-faith conversation goes to the courts of New South Wales — unless you're a consumer in another country and your local consumer protection laws give you the right to a different venue, which they may.</p>
+<hr />
+<p style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-50);text-align:center">Questions about anything in this agreement? Email <a href="mailto:legal@perchmark.com.au">legal@perchmark.com.au</a>. We answer within 5 business days.</p>
+</article>
+
+<footer><div class="footer-grid"><div class="footer-brand"><div class="logo"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 14C5 14 6 12 8 11C10 10 12 11 13 12C14.5 13.5 17 13 19 11C20.5 9.8 21 8 21 7" stroke="#FBFAF7" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="6" r="1.6" fill="#E76C4A"/><path d="M3 18H21" stroke="#FBFAF7" stroke-width="1.4" stroke-linecap="round" opacity=".4"/></svg> perchmark</div><p>The institutional-grade short-term rental intelligence platform. Built for serious investors. Calm at the top of the noise.</p><div class="meta">Operating globally · 6 countries · 87 markets</div></div><div><h4>Product</h4><ul><li><a href="index.html#product">Pulse</a></li><li><a href="index.html#features">Markets</a></li><li><a href="index.html#features">Properties</a></li><li><a href="index.html#features">Underwrite</a></li><li><a href="index.html#features">Scout</a></li><li><a href="index.html#features">Regulatory Radar</a></li><li><a href="index.html#features">Portfolio</a></li><li><a href="index.html#features">Reports</a></li></ul></div><div><h4>Company</h4><ul><li><a href="philosophy.html">Philosophy</a></li><li><a href="index.html#who">Customers</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="careers.html">Careers</a></li><li><a href="press.html">Press</a></li></ul></div><div><h4>Resources</h4><ul><li><a href="market-reports.html">Market reports</a></li><li><a href="regulation-tracker.html">Regulation tracker</a></li><li><a href="api.html">API docs</a></li><li><a href="help.html">Help center</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div></div><div class="footer-bottom"><div>© 2026 Perchmark · Worldwide</div><div>Independent · operator-grade · regulation-aware</div></div></footer>
+<script>const nav=document.querySelector('nav.top');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>20),{passive:true});</script>
+</body>
+</html>
