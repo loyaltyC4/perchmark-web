@@ -42,3 +42,9 @@ All pages are complete self-contained HTML files with inline CSS + JS. Google Fo
 ---
 
 © 2026 Perchmark ‘ Independent ‘ operator-grade ‘ regulation-aware
+
+---
+
+## More from this builder
+
+[Bidcheck](https://bidcheck.co.za) — South African government-tender intelligence for SMMEs: live tender search across all nine provinces, eligibility checks (CSD, B-BBEE, CIDB, PSIRA), buyer payment-risk signals and AI bid drafting. Search free at [bidcheck.co.za](https://bidcheck.co.za).
